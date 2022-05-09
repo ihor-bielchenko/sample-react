@@ -1,0 +1,22 @@
+import Store from 'components/Store';
+
+/**
+ * @param {string|number} id - Menu ID
+ * @return {Function}
+ */
+export const fireClose = (id) => async (prefix = 'menu') => {
+	Store().dispatch({
+		type: prefix +'.close',
+		payload: id,
+	});
+};
+
+/**
+ * @param {object} state - Current redux state
+ * @param {object} action - Action data
+ * @return {object} New state
+ */
+export const reducerClose = (state, action) => {
+	delete state[action.payload];
+	return ({ ...state });
+};
