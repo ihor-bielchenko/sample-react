@@ -97,10 +97,13 @@ function getClientEnvironment(publicUrl) {
 				SERVER_API_URL_RECOVERY_RESET: process.env.SERVER_API_URL_RECOVERY_RESET,
 
 				PAGE_URL_HOME: process.env.PAGE_URL_HOME,
-				PAGE_URL_SIGN_IN: process.env.PAGE_URL_SIGN_IN,
-				PAGE_URL_SIGN_UP: process.env.PAGE_URL_SIGN_UP,
-				PAGE_URL_RECOVERY: process.env.PAGE_URL_RECOVERY,
-				PAGE_URL_RECOVERY_RESET: process.env.PAGE_URL_RECOVERY_RESET,
+				PAGE_URL_AUTH: process.env.PAGE_URL_AUTH,
+				PAGE_URL_AUTH_SIGN_IN: process.env.PAGE_URL_AUTH_SIGN_IN,
+				PAGE_URL_AUTH_SIGN_UP: process.env.PAGE_URL_AUTH_SIGN_UP,
+				PAGE_URL_AUTH_RECOVERY: process.env.PAGE_URL_AUTH_RECOVERY,
+				PAGE_URL_AUTH_RESET: process.env.PAGE_URL_AUTH_RESET,
+				PAGE_URL_APP: process.env.PAGE_URL_APP,
+				PAGE_URL_APP_ACCOUNT: process.env.PAGE_URL_APP_ACCOUNT,
 			}
 		);
 	// Stringify all values so we can feed into webpack DefinePlugin
