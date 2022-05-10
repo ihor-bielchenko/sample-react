@@ -4,6 +4,7 @@ import {
 	Routes,
 	Route,
 } from 'react-router-dom';
+import { SnackbarProvider } from 'notistack';
 import { Provider as ProviderTheme } from 'components/Theme';
 import { Provider as ProviderStore } from 'components/Store';
 import { Provider as ProviderLanguage } from 'components/Language';
@@ -21,19 +22,21 @@ root.render(
 		<ProviderTheme>
 			<ProviderLanguage>
 				<ProviderLoader>
-					<ProviderAuth>
-						<BrowserRouter>
-							<Routes>
-								<Route 
-									index
-									path={process.env.PAGE_URL_HOME}
-									element={<PageHome />} />
-								<Route 
-									path={process.env.PAGE_URL_SIGN_IN}
-									element={<PageSignIn />} />
-							</Routes>
-						</BrowserRouter>
-					</ProviderAuth>
+					<SnackbarProvider>
+						<ProviderAuth>
+							<BrowserRouter>
+								<Routes>
+									<Route 
+										index
+										path={process.env.PAGE_URL_HOME}
+										element={<PageHome />} />
+									<Route 
+										path={process.env.PAGE_URL_SIGN_IN}
+										element={<PageSignIn />} />
+								</Routes>
+							</BrowserRouter>
+						</ProviderAuth>
+					</SnackbarProvider>
 				</ProviderLoader>
 			</ProviderLanguage>
 		</ProviderTheme>

@@ -3,7 +3,7 @@ import Store from 'components/Store';
 /**
  * @return {Function}
  */
-export const fireSchema = (payload) => async (prefix = 'loader') => {
+export const fireSchema = () => async (prefix = 'loader') => {
 	Store().dispatch({
 		type: prefix +'.schema',
 	});

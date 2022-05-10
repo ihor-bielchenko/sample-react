@@ -1,17 +1,16 @@
 import axios from 'axios';
 import Store from 'components/Store';
 import lexicon from 'components/Language/utils/lexicon.js';
-import { fireShowError as actionSnackbarShowError } from 'components/Store/snackbar/actions/showError.js';
 import { fireShow as actionLoaderShow } from 'components/Store/loader/actions/show.js';
 import { fireHide as actionLoaderHide } from 'components/Store/loader/actions/hide.js';
 
 /**
  * @return {Function}
  */
-export const fireSignIn = (login = '', password = '', navigate = () => {}) => async (prefix = 'auth') => {
+export const fireSignIn = (login = '', password = '') => async (navigate = () => {}, snackbar = () => {}, prefix = 'auth') => {
 	if (!login
 		|| !password) {
-		return actionSnackbarShowError()(lexicon('storeAuthSignInFieldsEmpty'), 3000);
+		return snackbar(lexicon('storeAuthSignInFieldsEmpty'), { variant: 'error' });
 	}
 	try {
 		actionLoaderShow()();
@@ -41,7 +40,7 @@ export const fireSignIn = (login = '', password = '', navigate = () => {}) => as
 			: err.message;
 		const errorMessage = `${lexicon('storeAuthSignInErrorResponse')}: "${errorResponse}"`;
 
-		actionSnackbarShowError()(errorMessage, 3000);
+		snackbar(errorMessage, { variant: 'error' })
 		actionLoaderHide()();
 	}
 };

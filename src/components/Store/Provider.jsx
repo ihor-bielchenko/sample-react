@@ -4,7 +4,6 @@ import { setStore } from './Store.js';
 import { fireSchema as actionLoaderSchema } from './loader/actions/schema.js';
 import { fireSchema as actionMenuSchema } from './menu/actions/schema.js';
 import { fireSchema as actionDialogSchema } from './dialog/actions/schema.js';
-import { fireSchema as actionSnackbarSchema } from './snackbar/actions/schema.js';
 import { fireSchema as actionAuthSchema } from './auth/actions/schema.js';
 
 let Provider = ({ children }) => {
@@ -13,7 +12,6 @@ let Provider = ({ children }) => {
 		actionMenuSchema()();
 		actionDialogSchema()();
 		actionDialogSchema()();
-		actionSnackbarSchema()();
 		actionAuthSchema()();
 	}, [
 	]);
