@@ -18,5 +18,8 @@ export const fireClose = (id) => async (prefix = 'dialog') => {
  */
 export const reducerClose = (state, action) => {
 	delete state[action.payload];
-	return ({ ...state });
+	return ({ 
+		...state, 
+		_updater: state._updater + 1,
+	});
 };

@@ -16,6 +16,7 @@ export const fireSchema = () => async (prefix = 'snackbar') => {
  */
 export const reducerSchema = (state, action) => {
 	return ({
+		_updater: 0,
 		/*0: {
 			status: STATUS_INFO,
 			text: 'Message',

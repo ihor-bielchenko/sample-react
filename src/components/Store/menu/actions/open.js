@@ -24,5 +24,6 @@ export const reducerOpen = (state, action) => {
 	return ({ 
 		...state,
 		[action.payload.id]: action.payload.acnhorNode,
+		_updater: state._updater + 1,
 	});
 };

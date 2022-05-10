@@ -50,5 +50,6 @@ export const reducerTokensRefresh = (state, action) => {
 	return {
 		authFlag: false,
 		...(action.payload ?? {}),
+		_updater: state._updater + 1,
 	};
 };

@@ -16,6 +16,7 @@ export const fireSchema = () => async (prefix = 'auth') => {
  */
 export const reducerSchema = (state, action) => {
 	return {
+		_updater: 0,
 		authFlag: false,
 	};
 };

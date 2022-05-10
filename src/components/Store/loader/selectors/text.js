@@ -4,9 +4,9 @@ import { createSelector } from 'reselect';
  * @param {number|string} id - Loader ID
  * @return {Function}
  */
-const visible = (id) => createSelector(
+const text = (id) => createSelector(
 	(state) => state.loader,
-	(state) => !!(state[id ?? 'window'] ?? {}).visible,
+	(state) => (state[id ?? 'window'] ?? {}).text,
 );
 
-export default visible;
+export default text;

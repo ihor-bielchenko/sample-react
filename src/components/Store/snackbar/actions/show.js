@@ -36,5 +36,6 @@ export const reducerShow = (state, action) => {
 			timeout: -1,
 			...action.payload,
 		},
+		_updater: state._updater + 1,
 	};
 };

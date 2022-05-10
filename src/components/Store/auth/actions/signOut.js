@@ -20,5 +20,6 @@ export const fireSignOut = () => async (prefix = 'auth') => {
 export const reducerSignOut = (state, action) => {
 	return {
 		authFlag: false,
+		_updater: state._updater + 1,
 	};
 };

@@ -16,7 +16,9 @@ export const fireSchema = (payload) => async (prefix = 'loader') => {
  */
 export const reducerSchema = (state, action) => {
 	return ({
+		_updater: 0,
 		window: {
+			visible: true,
 			progressPercentage: -1,
 			text: '',
 		},

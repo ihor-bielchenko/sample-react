@@ -7,6 +7,7 @@ import {
 import { Provider as ProviderTheme } from 'components/Theme';
 import { Provider as ProviderStore } from 'components/Store';
 import { Provider as ProviderLanguage } from 'components/Language';
+import { Provider as ProviderLoader } from 'components/Loader';
 import { Provider as ProviderAuth } from 'components/Auth';
 import PageHome from 'pages/Home';
 import PageSignIn from 'pages/SignIn';
@@ -19,19 +20,21 @@ root.render(
 	<ProviderStore>
 		<ProviderTheme>
 			<ProviderLanguage>
-				<BrowserRouter>
+				<ProviderLoader>
 					<ProviderAuth>
-						<Routes>
-							<Route 
-								index
-								path={process.env.PAGE_URL_HOME}
-								element={<PageHome />} />
-							<Route 
-								path={process.env.PAGE_URL_SIGN_IN}
-								element={<PageSignIn />} />
-						</Routes>
+						<BrowserRouter>
+							<Routes>
+								<Route 
+									index
+									path={process.env.PAGE_URL_HOME}
+									element={<PageHome />} />
+								<Route 
+									path={process.env.PAGE_URL_SIGN_IN}
+									element={<PageSignIn />} />
+							</Routes>
+						</BrowserRouter>
 					</ProviderAuth>
-				</BrowserRouter>
+				</ProviderLoader>
 			</ProviderLanguage>
 		</ProviderTheme>
 		<GlobalStyles />

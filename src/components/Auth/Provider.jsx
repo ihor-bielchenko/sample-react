@@ -1,11 +1,9 @@
 import React from 'react';
-import { fireSchema as actionAuthSchema } from 'components/Store/auth/actions/schema.js';
+import { fireTokensRefresh as actionAuthTokensRefresh } from 'components/Store/auth/actions/tokensRefresh.js';
 
 let Provider = ({ children }) => {
-
-	// onMount
 	React.useEffect(() => {
-		actionAuthSchema()();
+		actionAuthTokensRefresh()();
 	}, []);
 
 	return <React.Fragment>

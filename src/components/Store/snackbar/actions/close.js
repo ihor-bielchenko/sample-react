@@ -20,7 +20,12 @@ export const reducerClose = (state, action) => {
 	if ((typeof action.payload === 'string' && action.payload)
 		|| typeof action.payload === 'number') {
 		delete state[action.payload];
-		return ({ ...state });
+		return ({ 
+			...state,
+			_updater: state._updater + 1, 
+		});
 	}
-	return ({});
+	return ({
+		_updater: state._updater + 1,
+	});
 };

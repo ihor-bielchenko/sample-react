@@ -55,5 +55,6 @@ export const reducerSignIn = (state, action) => {
 	return {
 		...(action.payload ?? {}),
 		authFlag: true,
+		_updater: state._updater + 1,
 	};
 };

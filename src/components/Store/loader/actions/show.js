@@ -32,6 +32,8 @@ export const reducerShow = (state, action) => {
 			progressPercentage: 0,
 			text: '',
 			...action.payload,
+			visible: true,
 		},
+		_updater: state._updater + 1,
 	});
 };
